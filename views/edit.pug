@@ -1,0 +1,68 @@
+extends layout
+
+block content
+  h2= title
+  form(method='POST', action='/edit')
+    label Drink Name
+    input.form-control(name='name', type='text')
+    br 
+
+    label Spirit 
+    input.form-control(name='spirit', type='text',)
+    br
+
+    label Glass 
+    input.form-control(name='glass', type='text')
+    br
+
+    h3 Ingredient 1:
+    br 
+
+    label Name:
+    input.form-control(name='i1[iName]', type='text')
+    br 
+
+    label Amount:
+    input.form-control(name='i1[iAmount]', type='text')
+    br 
+
+    label Measure:
+    input.form-control(name='i1[iMeasure]', type='text')
+    br 
+
+    h3 Ingredient 2:
+    br 
+
+    label Name:
+    input.form-control(name='i2[iName]', type='text')
+    br 
+
+    label Amount:
+    input.form-control(name='i2[iAmount]', type='text')
+    br 
+
+    label Measure:
+    input.form-control(name='i2[iMeasure]', type='text')
+    br 
+
+
+    h3 Ingredient 3:
+    br 
+
+    label Name:
+    input.form-control(name='i3[iName]', type='text')
+    br 
+
+    label Amount:
+    input.form-control(name='i3[iAmount]', type='text')
+    br 
+
+    label Measure:
+    input.form-control(name='i3[iMeasure]', type='text')
+    br 
+
+    input.btn.btn-primary(type='submit', value='Submit')
+
+
+
+    

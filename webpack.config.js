@@ -11,34 +11,35 @@ module.exports = {
     path: path.resolve(__dirname, 'public')
   },
   module: {
-    rules: [{
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader'
-    },
-    {
-      test: /\.(scss|css)$/,
-      exclude: /node_modules/,
-      use:[{
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            reloadAll: true
-          }
-        },
-        'css-loader',
-        'postcss-loader',
-        'sass-loader'
-      ]
-    },
-    {
-      test: /\.(png|svg|jpg|gif)$/,
-      use: [{
-          loader: 'file-loader',
-          options: {
-              name: 'img/[name].[ext]',
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.(scss|css)$/,
+        exclude: /node_modules/,
+        use:[{
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              reloadAll: true
+            }
           },
-      }],
-    }
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [{
+            loader: 'file-loader',
+            options: {
+              name: 'img/[name].[ext]',
+            },
+        }],
+      }
     ]
   },
   plugins: [

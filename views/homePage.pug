@@ -1,5 +1,42 @@
 extends layout
 
 block content
-  .background-image
-    h2 This is the homepage 
+  .background-image 
+    .searchBarWrap
+      input#searchBar(type='text' name='searchBar' placeholder="Search recipes...")
+      button#searchBtn
+        i.fas.fa-search Search
+  .drink-cards
+    h3 Gin Cocktails 
+    section.home-cards
+      div
+        img(src="img/gin-fizz.webp")
+        h4 Gin Fizz 
+        p Love the Tom Collins? Try its frothy, bubbly cousin, the Gin Fizz. The secret to creating the perfect creaminess and froth is to shake, shake, shake—and then shake some more.
+        a(href="#") See Full Recipe 
+          i.fas.fa-chevron-right
+      div
+        img(src="img/last-word.webp")
+        h4 The Last Word
+        p The Last Word was one of the first pre-Prohibition drinks to lead the cocktail revival of the early aughts. One thing is certain: The Last Word will leave you, um, speechless.
+
+        a(href="#") See Full Recipe 
+          i.fas.fa-chevron-right
+      div
+        img(src="img/negroni.webp")
+        h4 Negroni
+        p The key to a great Negroni is finding a gin-vermouth pairing that complements, rather than overpowers, the bitter, bold flavors of Campari.
+
+        a(href="#") See Full Recipe 
+          i.fas.fa-chevron-right
+      div
+        img(src="img/french-75.webp")
+        h4 French 75
+        p Feeling a little parched at brunch? The French 75 is a sparkling cocktail that's perfect before, during and after your eggs Benedict. This is one classic you’ll want to rediscover again and again.
+
+        a(href="#") See Full Recipe 
+          i.fas.fa-chevron-right
+
+
+
+

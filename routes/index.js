@@ -1,13 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const Drinks = require('../models/Drinks');
+//const img = "../public/img/logo.png"
 
 router.get('/', (req, res) => {
-  res.render('homePage.pug');
+  res.render('homePage.pug', {title: "hello"});
 });
 
+router.get('/about', (req, res) => {
+  res.render('about.pug', {title: "About page"});
+})
+
 router.get('/edit', (req, res) => {
-  res.render('edit.pug', {img: img});
+  res.render('edit.pug');
 });
 
 router.post('/edit', (req, res) => {

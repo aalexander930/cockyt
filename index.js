@@ -6,7 +6,10 @@ const cookieParser = require('cookie-parser');
 const createError = require('http-errors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const session = require('express-session');
 require('dotenv').config();
+require('./models/Drink');
+const MongoStore = require('connect-mongo')(session)
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -28,6 +31,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: false,
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
+}));
 
 app.use('/', indexRouter);
 

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .drink-content
+    h2.drink-name  #{drink.name}
+    .drink-image 
+      img(src=`${drink.photo || '/img/weirdos.jpg'}`)
+    p Spirit: #{drink.spirit}
+    p Glassware: #{drink.glass}
+    p Instructions: #{drink.instructions}
+    h3 Ingredients:
+    each i in drink.ingredients
+      p - #{i.iAmount} #{i.iMeasure} #{i.iName}
+  

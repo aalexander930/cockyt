@@ -36,6 +36,15 @@ a {
   max-width: 1200px;
 }
 
+.drink-content {
+  // display: flex;
+  // flex-direction: column;
+  width: 90%;
+  margin: auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
 .drink-cards {
   width: 90%;
   margin: auto;
@@ -139,5 +148,16 @@ a {
   padding-top: 10px;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.drink-content h2 {
+  margin-top: 50px;
+  padding-bottom: 10px;
+}
+
+.drink-image img{
+  height: 600px;
+  width: 600px;
+  padding-bottom: 10px;
 }
 

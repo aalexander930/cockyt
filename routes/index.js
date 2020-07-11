@@ -1,27 +1,30 @@
+require('../models/Drink');
+const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
-const Drinks = require('../models/Drinks');
-//const img = "../public/img/logo.png"
+const Drink = mongoose.model('Drink');
+const {catchErrors} = require('../handlers/errorHandlers');
+const drinkController = require('../controllers/drinkController');
 
-router.get('/', (req, res) => {
-  res.render('homePage.pug', {title: "hello"});
-});
+router.get('/', catchErrors(drinkController.homePage));
+// router.get('/drink/:slug', catchErrors(drinkController.getDrinkBySlug));
 
 router.get('/about', (req, res) => {
   res.render('about.pug', {title: "About page"});
-})
+});
+
+router.get('/drink/:slug', async (req,res) => {
+  const drink = await Drink.findOne({ slug: req.params.slug });
+  res.render('drink.pug', { drink });
+  console.log(drink)
+});
 
 router.get('/edit', (req, res) => {
   res.render('edit.pug');
 });
 
 router.post('/edit', (req, res) => {
-  let drink = new Drinks(req.body);
-  // drink.name = req.body.name;
-  // drink.spirit = req.body.spirit;
-  // drink.glass = req.body.glass;
-  // drink.i1[drinkName] = req.body.i1.drinkName;
-  // drink.i1[drinkMeasure] = req.body.i1.measurement;
+  let drink = new Drink(req.body.json);
 
   drink.save(function(err){
     if(err){
@@ -31,8 +34,8 @@ router.post('/edit', (req, res) => {
       console.log(req.body)
     }
   })
-
-  
 })
+
+
 
 module.exports = router;

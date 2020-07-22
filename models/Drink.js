@@ -24,6 +24,7 @@ const DrinksSchema = new Schema({
   photo: {
     type: String
   },
+  date: { type: Date, default: Date.now },
   ingredients: [{
     iName: {
       type: String
@@ -35,6 +36,7 @@ const DrinksSchema = new Schema({
       type: String
     }
   }]
+
 });
 
 // DrinksSchema.pre('save', async function(next) {

@@ -1,0 +1,19 @@
+mixin drinkCard(drink = {})
+  .drink 
+    .drink__hero 
+      a(href=`/drinks/${drink.slug}`) 
+        img(src=`${drink.photo || '/img/weirdos.jpg'}`)
+
+    .drink__details 
+      h3 #{drink.name}
+      if drink.description
+        p= `${drink.description.split(' ').slice(0, 25).join(' ')}...`
+      
+      a(href=`/drinks/${drink.slug}`) See Full Recipe
+        i.fas.fa-chevron-right
+      
+    
+
+
+
+    

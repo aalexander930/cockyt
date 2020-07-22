@@ -7,9 +7,11 @@ const createError = require('http-errors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const flash = require('connect-flash');
 require('dotenv').config();
 require('./models/Drink');
 const MongoStore = require('connect-mongo')(session)
+const errorHandlers = require('./handlers/errorHandlers');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -25,6 +27,11 @@ mongoose.connect(url, {
   console.log('connected...');
 })
 
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
+// view engine set up
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,15 +48,26 @@ app.use(session({
 
 app.use('/', indexRouter);
 
+app.use(errorHandlers.notFound);
+
+app.use(errorHandlers.flashValidationErrors);
+
+// Otherwise this was a really bad error we didn't expect! Shoot eh
+if (app.get('env') === 'development') {
+  /* Development Error Handler - Prints stack trace */
+  app.use(errorHandlers.developmentErrors);
+}
+
+// production error handler
+app.use(errorHandlers.productionErrors);
+
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 
-// view engine set up
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+
 
 //render html files
 // if using ejs app.engine('html', require('ejs').renderFile);
@@ -64,15 +82,13 @@ app.set('view engine', 'pug');
 // })
 
 // catch 404 and forward to error handler 
-app.use((req, res, next) => {
-  next(new createError.NotFound());
-});
+// app.use((req, res, next) => {
+//   next(new createError.NotFound());
+// });
 
-//error handler 
-app.use((err, req, res, next) => {
-  //render the error page 
-  res.status(err.status || 500);
-  // res.render('error.html', {err});
-});
-
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+// //error handler 
+// app.use((err, req, res, next) => {
+//   //render the error page 
+//   res.status(err.status || 500);
+//   // res.render('error.html', {err});
+// });

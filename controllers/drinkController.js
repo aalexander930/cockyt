@@ -7,9 +7,13 @@ exports.homePage = (req, res) => {
 
 exports.getDrinkBySlug = async (req, res, next) => {
   const drink = await Drink.findOne({ slug: req.params.slug });
-  // if(!drink) { // if the url is wrong/store doesn't exist, error handle
-  // next();
-  // return
-  // }
-res.render('drink', { drink, title: store.name })
+  res.render('drink.pug', { drink });
+  console.log(drink);
 };
+
+exports.getDrinks = async (req, res) => {
+  const drinks = await Drink.find()
+  res.render('drinks', { title: 'Drink Recipes', drinks });
+}
+
+

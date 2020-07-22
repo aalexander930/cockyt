@@ -1,0 +1,8 @@
+extends layout 
+
+include mixins_drinkCard
+
+block content
+  .home-cards
+    each drink in drinks 
+      +drinkCard(drink)

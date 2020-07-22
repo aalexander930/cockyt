@@ -5,7 +5,28 @@ block content
     .searchBarWrap
       input#searchBar(type='text' name='searchBar' placeholder="Search recipes...")
       button#searchBtn
-        i.fas.fa-search Search
+        i.fas.fa-search(type="submit") Search
+
+    //- Temporary search results render 
+    .search-results
+      h3 Search Results 
+      //- section.home-cards
+      //-   div
+      //-     a(href="/about")
+      //-       img(src="img/gin-fizz.webp")
+      //-     h4 Gin Fizz 
+      //-     p Love the Tom Collins? Try its frothy, bubbly cousin, the Gin Fizz. The secret to creating the perfect creaminess and froth is to shake, shake, shake—and then shake some more.
+      //-     a(href="#") See Full Recipe 
+      //-       i.fas.fa-chevron-right
+        //- div
+        //-   img(src="img/last-word.webp")
+        //-   h4 The Last Word
+        //-   p The Last Word was one of the first pre-Prohibition drinks to lead the cocktail revival of the early aughts. One thing is certain: The Last Word will leave you, um, speechless.
+        //-   a(href="#") See Full Recipe 
+        //-     i.fas.fa-chevron-right
+
+        
+
   .drink-cards
     h3 Gin Cocktails 
     section.home-cards

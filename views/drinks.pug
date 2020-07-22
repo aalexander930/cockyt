@@ -1,0 +1,9 @@
+extends layout
+
+include mixins/_drinkCard
+block content 
+  .inner
+    h2= title
+    .drinks
+      each drink in drinks 
+        +drinkCard(drink)

@@ -117,15 +117,18 @@ a {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* repeat 4 times, 1 fr unit each */
   grid-gap: 20px; /* puts space between grid items */
-
 }
 
 .home-cards img {
   width: 100%; /* Images can go outside the column. This prevents that by saying only take up 100% of space */
   margin-bottom: 20px; /* space under the image in between the h3 */
-  width: 90%;
+  // width: 90%;
   margin: auto;
   max-width: 1200px;
+}
+
+.home-cards img:hover {
+  opacity: 0.9;
 }
 
 .drink-cards h3 {
@@ -143,7 +146,7 @@ a {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.drink-cards a {
+.drink-cards .home-cards a {
   display: inline-block;
   padding-top: 10px;
   text-transform: uppercase;
@@ -161,3 +164,83 @@ a {
   padding-bottom: 10px;
 }
 
+.drink-glass {
+  padding-bottom: 10px;
+}
+
+.drink-instructions {
+  padding-bottom: 10px;
+}
+
+.search-results {
+  width: 90%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.result-cards {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr); /* repeat 4 times, 1 fr unit each */
+  grid-gap: 20px; /* puts space between grid items */
+}
+
+.result-cards img {
+  width: 100%; /* Images can go outside the column. This prevents that by saying only take up 100% of space */
+  margin-bottom: 20px; /* space under the image in between the h3 */
+  width: 90%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.drinks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* repeat 4 times, 1 fr unit each */
+  flex-wrap: wrap;
+  grid-gap: 20px; /* puts space between grid items */
+  // margin: -1.25em 0 0 -1.25em; 
+}
+
+.drink:hover {
+  opacity: .8;
+}
+
+
+
+.inner {
+  width: 100%
+}
+
+.inner h2 {
+  text-align: center;
+  margin: 50px;
+}
+
+
+.drink__hero {
+  position: relative;
+  text-align: center; }
+
+.drink__hero img {
+  width: 100%; /* Images can go outside the column. This prevents that by saying only take up 100% of space */
+  height: 300px;
+  margin-bottom: 10px; /* space under the image in between the h3 */
+}
+
+.drink__details h3 {
+  margin-bottom: 10px;
+}
+
+.drink__details p {
+  margin-bottom: 10px;
+}
+
+.drink__details a {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.drink__details {
+  text-align: center;
+}

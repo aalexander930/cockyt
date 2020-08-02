@@ -15,6 +15,7 @@
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "autoprefixer": "^9.8.0",
+    "axios": "^0.19.2",
     "babel-loader": "^8.1.0",
     "babel-minify-webpack-plugin": "^0.3.1",
     "concurrently": "^5.2.0",

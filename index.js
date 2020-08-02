@@ -12,6 +12,7 @@ require('dotenv').config();
 require('./models/Drink');
 const MongoStore = require('connect-mongo')(session)
 const errorHandlers = require('./handlers/errorHandlers');
+// import typeAhead from './src/javascripts/typeAhead'
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -68,27 +69,3 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 
 
-
-//render html files
-// if using ejs app.engine('html', require('ejs').renderFile);
-
-
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, './views', 'index.html'))
-// });
-
-// app.get('/', (req, res) => {
-//   res.render('index.html', { message: 'Hello World using ejs!' });
-// })
-
-// catch 404 and forward to error handler 
-// app.use((req, res, next) => {
-//   next(new createError.NotFound());
-// });
-
-// //error handler 
-// app.use((err, req, res, next) => {
-//   //render the error page 
-//   res.status(err.status || 500);
-//   // res.render('error.html', {err});
-// });

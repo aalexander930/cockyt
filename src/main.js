@@ -11,5 +11,9 @@ import './img/old-fashion.webp';
 import './img/whiskey-sour.webp';
 import './img/sazerac.webp';
 import './img/hot-toddy.webp';
+import typeAhead from './javascripts/typeAhead'
 
-console.log("Hello");
+
+typeAhead(document.querySelector('.searchBarWrap'));
+console.log("Hello world");
+

@@ -39,6 +39,13 @@ const DrinksSchema = new Schema({
 
 });
 
+DrinksSchema.index({
+  name: 'text',
+  instructions: 'text',
+  ingredients: 'text'
+})
+
+
 // DrinksSchema.pre('save', async function(next) {
 //   if (!this.isModified('name')) {
 //     next(); // skip it

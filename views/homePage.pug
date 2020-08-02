@@ -2,14 +2,14 @@ extends layout
 
 block content
   .background-image 
-    .searchBarWrap
-      input#searchBar(type='text' name='searchBar' placeholder="Search recipes...")
+    form.searchBarWrap( action='/search' method="get")
+      input#searchBar(type='text' name='q' placeholder="Search recipes...")
       button#searchBtn
-        i.fas.fa-search(type="submit") Search
+        i.fas.fa-search(type="submit" name="submit") Search
 
     //- Temporary search results render 
-    .search-results
-      h3 Search Results 
+    //- .search-results
+    //-   h3 Search Results 
       //- section.home-cards
       //-   div
       //-     a(href="/about")

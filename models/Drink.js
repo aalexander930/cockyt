@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const random = require('mongoose-simple-random');
 const Schema = mongoose.Schema;
 const slug = require('slugs');
 
@@ -10,7 +11,8 @@ const DrinksSchema = new Schema({
     type: String
   },
   spirit: {
-    type: String
+    type: String,
+    lowercase: true
   },
   glass: {
     type: String
@@ -38,12 +40,18 @@ const DrinksSchema = new Schema({
   }]
 
 });
+DrinksSchema.plugin(random);
 
 DrinksSchema.index({
-  name: 'text',
-  instructions: 'text',
-  ingredients: 'text'
+  'name': 'text',
+  'ingredients.iName': 'text',
+  'spirit': 'text'
 })
+
+
+
+// db.collection.createIndex({"name": 1});
+// db.collection.createIndex({"ingredients.iName": 1});
 
 
 // DrinksSchema.pre('save', async function(next) {

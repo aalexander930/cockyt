@@ -7,7 +7,9 @@ const {catchErrors} = require('../handlers/errorHandlers');
 const drinkController = require('../controllers/drinkController');
 const axios = require('axios');
 
-router.get('/', catchErrors(drinkController.homePage, drinkController.searchTest));
+router.get('/', catchErrors(drinkController.homePage, drinkController.getGinDrinks));
+router.get('/gin', catchErrors(drinkController.getGinDrinks));
+router.get('/spirit/:spirit', catchErrors(drinkController.getDrinkBySpirit));
 
 
 router.get('/about', (req, res) => {
@@ -17,10 +19,7 @@ router.get('/about', (req, res) => {
 router.get('/drinks/:slug', catchErrors(drinkController.getDrinkBySlug));
 router.get('/drinks', catchErrors(drinkController.getDrinks));
 
-router.get('/search', 
-  // catchErrors(drinkController.searchDrinks),
-  catchErrors(drinkController.getResults)
-);
+router.get('/search', catchErrors(drinkController.getResults));
 
 router.get('/edit', (req, res) => {
   res.render('edit.pug');

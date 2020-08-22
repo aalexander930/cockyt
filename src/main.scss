@@ -98,6 +98,15 @@ a {
   padding-top: 150px;
 }
 
+.searchBarWrap2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
 #searchBar {
   width: 600px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

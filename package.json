@@ -1,4 +1,3 @@
-
 {
   "name": "cockyt",
   "version": "1.0.0",
@@ -11,7 +10,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "assets": "webpack -w"
-
   },
   "author": "",
   "license": "ISC",

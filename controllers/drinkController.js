@@ -23,19 +23,19 @@ exports.homePage = async (req, res) => {
 exports.getDrinkBySlug = async (req, res, next) => {
   const drink = await Drink.findOne({ slug: req.params.slug });
   res.render('drink.pug', { drink });
-  console.log(drink);
+  // console.log(drink);
 };
 
 exports.getGinDrinks = async (req, res) => {
   const ginDrinks = await Drink.find( {spirit: 'Gin' } );
-  console.log(ginDrinks);
+  // console.log(ginDrinks);
   res.json(ginDrinks)
 }
 
 exports.getDrinkBySpirit = async (req, res) => {
   const result = await Drink.find( { spirit: req.params.spirit });
   res.json(result)
-  console.log(req.params.spirit)
+  // console.log(req.params.spirit)
 }
 
 exports.getDrinks = async (req, res) => {
@@ -86,7 +86,7 @@ exports.getResults = async (req, res, next) => {
       score: { $meta: 'textScore' }
     });
     res.render('results', { drinks, query } )
-    console.log(req.query.q)
+    // console.log(req.query.q)
   } else {
       res.redirect('/')
   }

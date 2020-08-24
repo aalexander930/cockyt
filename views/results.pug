@@ -8,11 +8,11 @@ block content
     input#searchBar(type='text' name='q' placeholder="Search by ingredient, spirit, cocktail...")
     button#searchBtn
       i.fas.fa-search(type="submit" name="submit") Search
-  if drinks.length > 0   
-    div Search results for: #{query} 
+  if drinks.length > 0 
+    .search-string Search results for: #[strong "#{query}"]
     .home-cards
       each drink in drinks 
         +drinkCard(drink)
   else 
-    p No results for #{query}. Please try again
+    p No results for #[strong "#{query}"]. Please try again
 

@@ -70,10 +70,10 @@ a {
   padding-bottom: 2px;
 }
 
-.nav-links li a:hover {
-  color: gray;
-  font-size: 18px;
-}
+// .nav-links li a:hover {
+//   color: gray;
+//   font-size: 18px;
+// }
 
 .navbar .logo img{
   width: 50px;
@@ -140,7 +140,7 @@ a {
   opacity: 0.9;
 }
 
-.drink-cards h3 {
+.drink-cards h2 {
   padding: 30px 0px 20px;
 }
 
@@ -181,10 +181,18 @@ a {
   padding-bottom: 10px;
 }
 
+// .drink-description {
+//   padding-bottom: 10px;
+// }
+
 .search-results {
   width: 90%;
   margin: auto;
   max-width: 1200px;
+}
+
+.search-string {
+  padding-bottom: 50px;
 }
 
 .result-cards {
@@ -214,6 +222,19 @@ a {
   opacity: .8;
 }
 
+.about-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  text-align: center;
+  margin-left: 222px;
+  margin-right: 222px;
+}
+
 
 
 .inner {
@@ -221,6 +242,11 @@ a {
 }
 
 .inner h2 {
+  text-align: center;
+  margin: 50px;
+}
+
+.title h2 {
   text-align: center;
   margin: 50px;
 }

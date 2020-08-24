@@ -13,7 +13,7 @@ import './img/sazerac.webp';
 import './img/hot-toddy.webp';
 import typeAhead from './javascripts/typeAhead'
 
-
-typeAhead(document.querySelector('.searchBarWrap'));
-console.log("Hello world");
+// Add this later to activate typeAhead
+// typeAhead(document.querySelector('.searchBarWrap'));
+// console.log("Hello world");
 

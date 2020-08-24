@@ -13,7 +13,7 @@ router.get('/spirit/:spirit', catchErrors(drinkController.getDrinkBySpirit));
 
 
 router.get('/about', (req, res) => {
-  res.render('about.pug', {title: "About page"});
+  res.render('about.pug', {title: "About"});
 });
 
 router.get('/drinks/:slug', catchErrors(drinkController.getDrinkBySlug));

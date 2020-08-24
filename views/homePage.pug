@@ -10,20 +10,20 @@ block content
         i.fas.fa-search(type="submit" name="submit") Search
 
   .drink-cards
-    h3 Gin Cocktails 
-    section.home-cards
+    h2 Gin Cocktails 
+    .home-cards
       each ginDrink in ginDrinks
         +drinkCard(ginDrink)
 
   .drink-cards
-    h3 Whiskey Cocktails 
-    section.home-cards
+    h2 Whiskey Cocktails 
+    .home-cards
        each whiskeyDrink in whiskeyDrinks
         +drinkCard(whiskeyDrink)
 
   .drink-cards
-    h3 Rum Cocktails 
-    section.home-cards
+    h2 Rum Cocktails 
+    .home-cards
        each rumDrink in rumDrinks
         +drinkCard(rumDrink)
  

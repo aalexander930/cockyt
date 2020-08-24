@@ -9,8 +9,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -w",
-    "start": "node index.js"
+    "start": "node index.js",
+    "assets": "webpack -w"
+
   },
   "author": "",
   "license": "ISC",
